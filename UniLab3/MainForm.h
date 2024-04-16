@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 namespace UniLab3 {
 
@@ -57,10 +57,11 @@ namespace UniLab3 {
 			this->ClientSize = System::Drawing::Size(616, 515);
 			this->Name = L"MainForm";
 			this->ShowIcon = false;
-			this->Text = L"Ëîáðàòîðíàÿ ðàáîòà ¹3 - Òåêñòîâûâé ðåêäàêòîð";
+			this->Text = L"Ð›Ð¾Ð±Ñ€Ð°Ñ‚Ð¾Ñ€Ð½Ð°Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ð° â„–3 - Ð¢ÐµÐºÑÑ‚Ð¾Ð²Ñ‹Ð²Ð¹ Ñ€ÐµÐºÐ´Ð°ÐºÑ‚Ð¾Ñ€";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+
 	};
 }

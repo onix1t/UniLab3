@@ -38,7 +38,6 @@ namespace UniLab3 {
 
     protected:
         void InitializeComponent(void) {
-            this->components = (gcnew System::ComponentModel::Container());
             this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
             this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
             this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -50,69 +49,86 @@ namespace UniLab3 {
             this->textBox1 = (gcnew System::Windows::Forms::TextBox());
             this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
             this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
-
             this->menuStrip1->SuspendLayout();
             this->SuspendLayout();
-
+            // 
             // menuStrip1
-            this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) { this->fileToolStripMenuItem, this->editToolStripMenuItem });
+            // 
+            this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+                this->fileToolStripMenuItem,
+                    this->editToolStripMenuItem
+            });
             this->menuStrip1->Location = System::Drawing::Point(0, 0);
             this->menuStrip1->Name = L"menuStrip1";
             this->menuStrip1->Size = System::Drawing::Size(800, 24);
             this->menuStrip1->TabIndex = 0;
             this->menuStrip1->Text = L"menuStrip1";
-
+            // 
             // fileToolStripMenuItem
-            this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) { this->openToolStripMenuItem, this->saveToolStripMenuItem, this->saveAsToolStripMenuItem });
+            // 
+            this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+                this->openToolStripMenuItem,
+                    this->saveToolStripMenuItem, this->saveAsToolStripMenuItem
+            });
             this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-            this->fileToolStripMenuItem->Size = System::Drawing::Size(37, 20);
-            this->fileToolStripMenuItem->Text = L"File";
-
+            this->fileToolStripMenuItem->Size = System::Drawing::Size(48, 20);
+            this->fileToolStripMenuItem->Text = L"Файл";
+            // 
             // openToolStripMenuItem
+            // 
             this->openToolStripMenuItem->Name = L"openToolStripMenuItem";
-            this->openToolStripMenuItem->Size = System::Drawing::Size(123, 22);
-            this->openToolStripMenuItem->Text = L"Open";
+            this->openToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+            this->openToolStripMenuItem->Text = L"Открыть";
             this->openToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::openToolStripMenuItem_Click);
-
+            // 
             // saveToolStripMenuItem
+            // 
             this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
-            this->saveToolStripMenuItem->Size = System::Drawing::Size(123, 22);
-            this->saveToolStripMenuItem->Text = L"Save";
+            this->saveToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+            this->saveToolStripMenuItem->Text = L"Сохранить";
             this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::saveToolStripMenuItem_Click);
-
+            // 
             // saveAsToolStripMenuItem
+            // 
             this->saveAsToolStripMenuItem->Name = L"saveAsToolStripMenuItem";
-            this->saveAsToolStripMenuItem->Size = System::Drawing::Size(123, 22);
-            this->saveAsToolStripMenuItem->Text = L"Save As";
+            this->saveAsToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+            this->saveAsToolStripMenuItem->Text = L"Сохранить как";
             this->saveAsToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::saveAsToolStripMenuItem_Click);
-
+            // 
             // editToolStripMenuItem
-            this->editToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) { this->replaceLettersWithPercentsToolStripMenuItem, this->checkColorsToolStripMenuItem });
+            // 
+            this->editToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+                this->replaceLettersWithPercentsToolStripMenuItem,
+                    this->checkColorsToolStripMenuItem
+            });
             this->editToolStripMenuItem->Name = L"editToolStripMenuItem";
-            this->editToolStripMenuItem->Size = System::Drawing::Size(39, 20);
-            this->editToolStripMenuItem->Text = L"Edit";
-
+            this->editToolStripMenuItem->Size = System::Drawing::Size(73, 20);
+            this->editToolStripMenuItem->Text = L"Изменить";
+            // 
             // replaceLettersWithPercentsToolStripMenuItem
+            // 
             this->replaceLettersWithPercentsToolStripMenuItem->Name = L"replaceLettersWithPercentsToolStripMenuItem";
-            this->replaceLettersWithPercentsToolStripMenuItem->Size = System::Drawing::Size(224, 22);
-            this->replaceLettersWithPercentsToolStripMenuItem->Text = L"Replace Letters with Percents";
+            this->replaceLettersWithPercentsToolStripMenuItem->Size = System::Drawing::Size(234, 22);
+            this->replaceLettersWithPercentsToolStripMenuItem->Text = L"Замена букв на \"%\"";
             this->replaceLettersWithPercentsToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::replaceLettersWithPercentsToolStripMenuItem_Click);
-
+            // 
             // checkColorsToolStripMenuItem
+            // 
             this->checkColorsToolStripMenuItem->Name = L"checkColorsToolStripMenuItem";
-            this->checkColorsToolStripMenuItem->Size = System::Drawing::Size(224, 22);
-            this->checkColorsToolStripMenuItem->Text = L"Check Colors";
+            this->checkColorsToolStripMenuItem->Size = System::Drawing::Size(234, 22);
+            this->checkColorsToolStripMenuItem->Text = L"Проверка на наличие цветов";
             this->checkColorsToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::checkColorsToolStripMenuItem_Click);
-
+            // 
             // textBox1
+            // 
             this->textBox1->Location = System::Drawing::Point(12, 27);
             this->textBox1->Multiline = true;
             this->textBox1->Name = L"textBox1";
             this->textBox1->Size = System::Drawing::Size(776, 411);
             this->textBox1->TabIndex = 1;
-            this->textBox1->Anchor = static_cast<AnchorStyles>(AnchorStyles::Top | AnchorStyles::Bottom | AnchorStyles::Left | AnchorStyles::Right);
-
+            // 
             // MainForm
+            // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->ClientSize = System::Drawing::Size(800, 450);
@@ -120,12 +136,13 @@ namespace UniLab3 {
             this->Controls->Add(this->menuStrip1);
             this->MainMenuStrip = this->menuStrip1;
             this->Name = L"MainForm";
-            this->Text = L"File Editor";
+            this->Text = L"Лабораторная работа №3 - Текстовый редактор";
             this->Resize += gcnew System::EventHandler(this, &MainForm::MainForm_Resize);
             this->menuStrip1->ResumeLayout(false);
             this->menuStrip1->PerformLayout();
             this->ResumeLayout(false);
             this->PerformLayout();
+
         }
 
         void openToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -172,7 +189,7 @@ namespace UniLab3 {
                 message += color + L": " + colorCounts[color] + L"\n";
             }
 
-            MessageBox::Show(message, L"Color Check");
+            MessageBox::Show(message, L"Наличие цветов в тексте");
         }
 
         void MainForm_Resize(System::Object^ sender, System::EventArgs^ e) {

@@ -144,7 +144,19 @@ namespace UniLab3 {
             this->PerformLayout();
 
         }
+#pragma endregion
 
+        // -- [ Функции ] --
+        
+        // Функция изменения интерфеса при изменении размеров окна
+        void MainForm_Resize(System::Object^ sender, System::EventArgs^ e) {
+            textBox1->Width = this->ClientSize.Width - 24;
+            textBox1->Height = this->ClientSize.Height - 51;
+        }
+        
+        // -- [ Кнопки ] --
+
+        // Кнопка открытия существующего файла
         void openToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
             if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
                 String^ filePath = openFileDialog1->FileName;
@@ -152,6 +164,7 @@ namespace UniLab3 {
             }
         }
 
+        // Кнопка сохранения изменений файла
         void saveToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
             if (!String::IsNullOrEmpty(openFileDialog1->FileName)) {
                 File::WriteAllText(openFileDialog1->FileName, textBox1->Text);
@@ -161,6 +174,7 @@ namespace UniLab3 {
             }
         }
 
+        // Функция сохранения новго файла
         void saveAsToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
             if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
                 String^ filePath = saveFileDialog1->FileName;
@@ -168,12 +182,14 @@ namespace UniLab3 {
             }
         }
 
+        // Кнопка замены букв на %
         void replaceLettersWithPercentsToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
             String^ originalText = textBox1->Text;
             String^ modifiedText = Regex::Replace(originalText, L"[a-zA-Zа-яА-Я]", L"%");
             textBox1->Text = modifiedText;
         }
 
+        // Кнопка поиска слов - основных цветов
         void checkColorsToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
             String^ text = textBox1->Text->ToLower();
             array<String^>^ colors = gcnew array<String^> { L"желтый", L"синий", L"красный" };
@@ -191,11 +207,5 @@ namespace UniLab3 {
 
             MessageBox::Show(message, L"Наличие цветов в тексте");
         }
-
-        void MainForm_Resize(System::Object^ sender, System::EventArgs^ e) {
-            textBox1->Width = this->ClientSize.Width - 24;
-            textBox1->Height = this->ClientSize.Height - 51;
-        }
-
     };
 }
